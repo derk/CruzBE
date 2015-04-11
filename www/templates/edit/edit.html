@@ -1,0 +1,58 @@
+<!--
+//  Purpose: Let users edit their textbook's information
+//  Included Information: Course, Title, Author, Condition, Description, Price, Contact
+ -->
+<ion-view view-title="Edit">
+  <ion-content>
+    <!-- Form for editing textbook information -->
+    <div class="list">
+      <label class="item item-input item-input">
+        <span class="input-label">Course</span>
+        <input type="text" placeholder="CMPE13/Class Name" ng-model="new.course">
+      </label>
+      <label class="item item-input item-input">
+        <span class="input-label">Title</span>
+        <input type="text" placeholder="Computer Programming" ng-model="new.title">
+      </label>
+      <label class="item item-input item-input">
+        <span class="input-label">Author</span>
+        <input type="text" placeholder="Author's Name" ng-model="new.author">
+      </label>
+      <label class="item item-input item-select">
+        <div class="input-label">
+          Condition
+        </div>
+        <select ng-init="selected='Used-Good'" ng-model="new.condition">
+          <option>New</option>
+          <option>Used-Like New</option>
+          <option>Used-Very Good</option>
+          <option>Used-Good</option>
+          <option>Used-Acceptable</option>
+          <option>Used-Unacceptable</option>
+        </select>
+      </label>
+      <label class="item item-input item-input">
+        <span class="input-label">Description</span>
+        <input type="text" placeholder="Book that teach you something new" ng-model="new.description">
+      </label>
+      <label class="item item-input item-input">
+        <span class="input-label">Price</span>
+        <input name="price" type="text" placeholder="25" ng-model="new.price">
+      </label>
+      <label class="item item-input item-input">
+        <span class="input-label">Contact</span>
+        <input type="email" placeholder="cruzbe@cruzbe.com" ng-model="new.email">
+      </label>
+    </div>
+
+    <!-- Submit/ Cancel -->
+    <div class="padding">
+      <button class="button button-block button-positive" ng-click="saveBook()">
+        Submit
+      </button>
+      <button class="button button-block button-assertive" ng-click="cancel()">
+        Cancel
+      </button>
+    </div>
+  </ion-content>
+</ion-view>

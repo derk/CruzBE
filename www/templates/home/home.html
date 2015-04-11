@@ -1,0 +1,33 @@
+<!--
+//  Purpose: Home page allows users to access all the textbooks with search capability
+//  Included Information: Entire database of textbooks
+ -->
+<ion-view view-title="CRUZBE">
+  <ion-content>
+    <!-- Search Bar -->
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search for Textbooks" ng-model="searchText">
+      </label>
+    </div>
+
+    <!-- Displaying textbooks from entire database -->
+    <div class="list" >
+      <!-- |  orderBy:predicate:reverse -->
+      <div class="item item-button-right" ng-repeat="tb in allbooks | filter:searchText | reverse">
+        <h2>{{tb.course}}, {{tb.title}}</h2>
+        <p> {{tb.price | currency}} </p>
+        <button class="button button-positive" ng-click="wantMore($index)">
+          <i class="icon ion-more"></i>
+        </button>
+        <div ng-show="showMore($index)">
+          <p>Author: {{tb.author}}</p>
+          <p>Condition: {{tb.condition}}</p>
+          <p>Description: {{tb.description}}</p>
+          <p>Contact: <a href='mailto:{{tb.email}}'>{{tb.email}}</a></p>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

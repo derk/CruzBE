@@ -1,0 +1,35 @@
+<!--
+//  Purpose: User page allows users access their books they sell.
+//  Included Information: Users' personal list of books that they sell
+ -->
+<ion-view view-title="USER">
+  <ion-content>
+    <!-- Search Bar -->
+    <div class="list list-inset">
+      <label class="item item-input">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="text" placeholder="Search for Textbooks" ng-model="searchText">
+      </label>
+    </div>
+
+    <!-- Display user's personal books list that they sells -->
+    <!-- User could edit or delete textbooks he/she9 sells -->
+    <div class="list" >
+      <div class="item item-button-right" ng-repeat="tb in userBooks | filter:searchText | reverse">
+        <h2>{{tb.course}}, {{tb.title}}</h2>
+        <p> {{tb.price | currency}} </p>
+        <button class="button button-positive" ng-click="wantMore($index)">
+          <i class="icon ion-more"></i>
+        </button>
+        <div ng-show="showMore($index)" style="border-top:dash 1px black;">
+          <p>Author: {{tb.author}}</p>
+          <p>Condition: {{tb.condition}}</p>
+          <p>Description: {{tb.description}}</p>
+          <p>Contact: {{tb.email}}</p>
+          <button class="button button-stable" ng-click="toEdit($index)">Edit</button>
+          <button class="button button-assertive" ng-click="removeBook($index)">Delete</button>
+        </div>
+      </div>
+    </div>
+</ion-content>
+</ion-view>
