@@ -15,7 +15,6 @@ $ ionic emulate ios
 ```
 #####Test it on Android simulator
 ```
-After connecting your Android phone to your computer
-
+//After connecting your Android phone to your computer
 $ ionic run android
 ```
