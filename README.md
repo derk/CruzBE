@@ -1,6 +1,6 @@
 CruzBE
 ======
-### How to Started CruzBE
+### How to Get Started with CruzBE
 
 ####In terminal
 #####Test it on browser
